@@ -162,19 +162,20 @@ function install_opendaylight_compute {
 # start_opendaylight() - Start running processes, including screen
 function start_opendaylight {
     echo "Starting OpenDaylight"
-    if is_ubuntu; then
-        JHOME=/usr/lib/jvm/jdk1.8.0_161
+   # if is_ubuntu; then
+    #    JHOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
   #  else
 #        JHOME=/usr/lib/jvm/java-1.7.0-openjdk
-    fi
-
+   # fi
+    echo "JAVA_HOME is "
+    echo $JAVA_HOME
     # Wipe out the data and journal directories ... grumble grumble grumble
     rm -rf $ODL_DIR/$ODL_NAME/{data,journal}
 
     # The following variables are needed by the running karaf process.
     # See the "bin/setenv" file in the OpenDaylight distribution for
     # their individual meaning.
-    export JAVA_HOME=$JHOME
+    #export JAVA_HOME=$JHOME
     export JAVA_MIN_MEM=$ODL_JAVA_MIN_MEM
     export JAVA_MAX_MEM=$ODL_JAVA_MAX_MEM
     export JAVA_MAX_PERM_MEM=$ODL_JAVA_MAX_PERM_MEM
