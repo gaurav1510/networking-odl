@@ -166,7 +166,7 @@ function start_opendaylight {
         JHOME=/usr/lib/jvm/jdk1.8.0_161
   #  else
 #        JHOME=/usr/lib/jvm/java-1.7.0-openjdk
- #   fi
+    fi
 
     # Wipe out the data and journal directories ... grumble grumble grumble
     rm -rf $ODL_DIR/$ODL_NAME/{data,journal}
