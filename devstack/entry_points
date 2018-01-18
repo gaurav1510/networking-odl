@@ -126,10 +126,10 @@ function install_opendaylight {
     echo "Installing OpenDaylight and dependent packages"
 
     if is_ubuntu; then
-        install_package maven openjdk-7-jre openjdk-7-jdk
-    else
-        yum_install maven java-1.7.0-openjdk
-    fi
+        install_package maven
+   # else
+   #     yum_install maven java-1.7.0-openjdk
+   # fi
 
     install_opendaylight_neutron_thin_ml2_driver
 
@@ -163,10 +163,10 @@ function install_opendaylight_compute {
 function start_opendaylight {
     echo "Starting OpenDaylight"
     if is_ubuntu; then
-        JHOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
-    else
-        JHOME=/usr/lib/jvm/java-1.7.0-openjdk
-    fi
+        JHOME=/usr/lib/jvm/jdk1.8.0_161
+  #  else
+#        JHOME=/usr/lib/jvm/java-1.7.0-openjdk
+ #   fi
 
     # Wipe out the data and journal directories ... grumble grumble grumble
     rm -rf $ODL_DIR/$ODL_NAME/{data,journal}
