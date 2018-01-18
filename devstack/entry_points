@@ -129,7 +129,7 @@ function install_opendaylight {
         install_package maven
    # else
    #     yum_install maven java-1.7.0-openjdk
-   # fi
+    fi
 
     install_opendaylight_neutron_thin_ml2_driver
 
